@@ -6,7 +6,12 @@ export class Buyer {
     private data: IBuyer = { ...emptyBuyer };
 
     update(fields: Partial<IBuyer>): void {
-        this.data = { ...this.data, ...fields };
+        this.data = {
+            payment: fields.payment ?? this.data.payment,
+            address: fields.address ?? this.data.address,
+            email: fields.email ?? this.data.email,
+            phone: fields.phone ?? this.data.phone,
+        };
     }
 
     getData(): IBuyer {

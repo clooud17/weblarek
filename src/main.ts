@@ -10,7 +10,8 @@ import { apiProducts } from './utils/data';
 const catalog = new Catalog();
 const basket = new Basket();
 const buyer = new Buyer();
-const shopApi = new ShopApi(new Api(API_URL));
+const api = new Api(API_URL);
+const shopApi = new ShopApi(api);
 
 function checkModels(): void {
     catalog.setItems(apiProducts.items);
